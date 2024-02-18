@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkdholding_task=self.webpackChunkdholding_task||[]).push([[574],{9574:(e,s,t)=>{t.r(s),t.d(s,{default:()=>d});var a=t(5043),n=t(3216),u=t(6178),c=t(7343),l=t(579);const d=()=>{const e=(0,u.jL)();return(0,a.useEffect)((()=>{e((0,c.yb)())}),[e]),(0,l.jsx)(n.C5,{to:"/auth/login",replace:!0})}}}]);
+//# sourceMappingURL=574.7c0bcba3.chunk.js.map

@@ -1,0 +1,30 @@
+{
+  "files": {
+    "main.js": "/dholding-task/static/js/main.dcfa6aae.js",
+    "static/js/453.12a4c0dc.chunk.js": "/dholding-task/static/js/453.12a4c0dc.chunk.js",
+    "static/js/838.a738ef0d.chunk.js": "/dholding-task/static/js/838.a738ef0d.chunk.js",
+    "static/js/787.cfa211b2.chunk.js": "/dholding-task/static/js/787.cfa211b2.chunk.js",
+    "static/js/807.d99bbc99.chunk.js": "/dholding-task/static/js/807.d99bbc99.chunk.js",
+    "static/js/574.7c0bcba3.chunk.js": "/dholding-task/static/js/574.7c0bcba3.chunk.js",
+    "static/media/login-bg.webp": "/dholding-task/static/media/login-bg.bf8eb115a5ab5a0001e4.webp",
+    "static/media/axios.cjs": "/dholding-task/static/media/axios.5cdcf59e4b6a285aeb16.cjs",
+    "static/media/avatar.webp": "/dholding-task/static/media/avatar.d312ef45d730651ab2ed.webp",
+    "static/media/server-error.svg": "/dholding-task/static/media/server-error.f458bc62f39ebb149875fb4c3af95723.svg",
+    "static/media/error404.svg": "/dholding-task/static/media/error404.3edf53fb88ac97f3f41918ebe6818419.svg",
+    "static/media/nothing-found.webp": "/dholding-task/static/media/nothing-found.f6067789fa9f74aa2170.webp",
+    "static/media/nft-icon.svg": "/dholding-task/static/media/nft-icon.7de40075421754584276b8c175be6da6.svg",
+    "static/media/verify-email.webp": "/dholding-task/static/media/verify-email.4db0235f6edb5e080e9b.webp",
+    "index.html": "/dholding-task/index.html",
+    "static/media/google.svg": "/dholding-task/static/media/google.57f36f062c0855260776bfabc490d59d.svg",
+    "static/media/facebook.svg": "/dholding-task/static/media/facebook.74c258dd7526a8212485071bb98aaa81.svg",
+    "main.dcfa6aae.js.map": "/dholding-task/static/js/main.dcfa6aae.js.map",
+    "453.12a4c0dc.chunk.js.map": "/dholding-task/static/js/453.12a4c0dc.chunk.js.map",
+    "838.a738ef0d.chunk.js.map": "/dholding-task/static/js/838.a738ef0d.chunk.js.map",
+    "787.cfa211b2.chunk.js.map": "/dholding-task/static/js/787.cfa211b2.chunk.js.map",
+    "807.d99bbc99.chunk.js.map": "/dholding-task/static/js/807.d99bbc99.chunk.js.map",
+    "574.7c0bcba3.chunk.js.map": "/dholding-task/static/js/574.7c0bcba3.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.dcfa6aae.js"
+  ]
+}
