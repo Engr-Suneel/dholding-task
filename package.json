@@ -1,4 +1,5 @@
 {
+  "homepage": "https://Engr-Suneel.github.io/dholding-task",
   "name": "dholding-task",
   "version": "0.1.0",
   "private": true,
@@ -34,6 +35,8 @@
   },
   "scripts": {
     "start": "npm run buildThemes && react-scripts start",
+    "predeploy": "npm run buildThemes && npm run build",
+    "deploy": "gh-pages -d build",
     "build": "npm run buildThemes && react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
@@ -64,6 +67,7 @@
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-react-hooks": "^4.6.0",
+    "gh-pages": "^6.1.1",
     "less": "^4.2.0",
     "less-plugin-clean-css": "^1.5.1",
     "prettier": "^3.2.5"

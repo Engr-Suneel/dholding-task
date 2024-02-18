@@ -1,7 +1,7 @@
 import React from 'react';
 import {
   // CompassOutlined,
-  DashboardOutlined,
+  // DashboardOutlined,
   // FormOutlined,
   // HomeOutlined,
   // LayoutOutlined,
@@ -28,12 +28,12 @@ export const sidebarNavigation: SidebarNavigationItem[] = [
     url: '/',
     icon: <NftIcon />,
   },
-  {
-    title: 'common.medical-dashboard',
-    key: 'medical-dashboard',
-    url: '/medical-dashboard',
-    icon: <DashboardOutlined />,
-  },
+  // {
+  //   title: 'common.medical-dashboard',
+  //   key: 'medical-dashboard',
+  //   url: '/medical-dashboard',
+  //   icon: <DashboardOutlined />,
+  // },
   // {
   //   title: 'common.apps',
   //   key: 'apps',
