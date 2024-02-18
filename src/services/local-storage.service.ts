@@ -6,8 +6,8 @@ export const persistToken = (token: string): void => {
   localStorage.setItem('accessToken', token);
 };
 
-export const readToken = (): string => {
-  return localStorage.getItem('accessToken') || 'bearerToken';
+export const readToken = (): any => {
+  return localStorage.getItem('accessToken') || null;
 };
 
 export const persistUser = (user: IUser): void => {

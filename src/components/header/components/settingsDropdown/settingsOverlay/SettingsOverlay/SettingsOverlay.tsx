@@ -4,7 +4,7 @@ import { useAppSelector } from '../../../../../../hooks';
 import { BaseButton } from '../../../../../common/BaseButton/BaseButton';
 import { DropdownCollapse } from '../../../../Header.styles';
 import { LanguagePicker } from '../LanguagePicker/LanguagePicker';
-import { NightModeSettings } from '../nightModeSettings/NightModeSettings';
+// import { NightModeSettings } from '../nightModeSettings/NightModeSettings';
 import { ThemePicker } from '../ThemePicker/ThemePicker';
 import * as S from './SettingsOverlay.styles';
 
@@ -22,9 +22,9 @@ export const SettingsOverlay: React.FC = ({ ...props }) => {
         <DropdownCollapse.Panel header={t('header.changeTheme')} key="themePicker">
           <ThemePicker />
         </DropdownCollapse.Panel>
-        <DropdownCollapse.Panel header={t('header.nightMode.title')} key="nightMode">
+        {/* <DropdownCollapse.Panel header={t('header.nightMode.title')} key="nightMode">
           <NightModeSettings />
-        </DropdownCollapse.Panel>
+        </DropdownCollapse.Panel> */}
       </DropdownCollapse>
       {isPWASupported && (
         <S.PwaInstallWrapper>

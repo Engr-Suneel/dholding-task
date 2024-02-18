@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { useAppDispatch } from '../../../hooks';
 import { doLogin } from '../../../stores/slices/auth.slice';
 import { notificationController } from '../../../controllers';
+import { initDefaultValues } from '../../../helpers';
 import { ReactComponent as FacebookIcon } from '../../../assets/icons/facebook.svg';
 import { ReactComponent as GoogleIcon } from '../../../assets/icons/google.svg';
 import * as Auth from '../../layouts/AuthLayout/AuthLayout.styles';
@@ -15,10 +16,7 @@ interface LoginFormData {
   password: string;
 }
 
-export const initValues: LoginFormData = {
-  email: 'hello@altence.com',
-  password: 'some-test-pass',
-};
+export const initValues = initDefaultValues;
 
 export const LoginForm: React.FC = () => {
   const navigate = useNavigate();
