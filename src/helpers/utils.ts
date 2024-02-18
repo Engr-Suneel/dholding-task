@@ -1,5 +1,6 @@
+import { BaseBadgeProps } from "../components/common/BaseBadge/BaseBadge";
 import { PriorityEnum } from "../enums";
-import { NotificationType } from "../interfaces";
+import { NotificationType, Severity } from "../interfaces";
 
 export const camelize = (string: string): string => {
   return string
@@ -135,3 +136,11 @@ export const formatNumberWithCommas = (value: number): string => {
 export const msToH = (ms: number): number => Math.floor(ms / 3600000);
 
 export const hToMS = (h: number): number => h * 3600000;
+
+export const mapBadgeStatus = (status: BaseBadgeProps['status']): Severity => {
+  if (!status || status === 'default' || status === 'processing') {
+    return 'info';
+  }
+
+  return status;
+};
