@@ -232,7 +232,12 @@
     "verifyEmailPage": "Verify email page",
     "warning": "Warning",
     "zipcode": "Zipcode",
-    "delete": "Delete"
+    "delete": "Delete",
+    "dashboard": "Dashboard",
+    "stock": "Stock",
+    "apple": "Apple",
+    "tesla": "Tesla",
+    "nvidia": "Nvidia"
   },
   "medical-dashboard": {
     "activity": {
