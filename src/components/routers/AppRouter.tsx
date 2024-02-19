@@ -49,7 +49,7 @@ export const AppRouter: React.FC = () => {
       <Routes>
         <Route path={DASHBOARD_PATH} element={protectedLayout}>
           <Route index element={<NftDashboard />} />
-          <Route path="stock">
+          <Route path="stock" >
             <Route path="apple" element={<Apple />} />
             <Route path="tesla" element={<Tesla />} />
             <Route path="nvidia" element={<Nvidia />} />

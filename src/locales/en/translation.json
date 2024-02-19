@@ -873,5 +873,16 @@
     "trendingCollections": "Trending Collections",
     "recentlyAddedNFTs": "Recently Added NFTs",
     "trendingCreators": "Trending Creators"
+  },
+  "stock": {
+    "apple": {
+      "title": "Apple Historical Data"
+    },
+    "tesla": {
+      "title": "Tesla Historical Data"
+    },
+    "nvidia": {
+      "title": "Nvidia Historical Data"
+    }
   }
 }
