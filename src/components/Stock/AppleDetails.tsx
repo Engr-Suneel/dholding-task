@@ -3,15 +3,15 @@ import { useTranslation } from 'react-i18next';
 import { BaseRow } from '../../components/common/BaseRow/BaseRow';
 import { BaseCol } from '../../components/common/BaseCol/BaseCol';
 import { BaseCard } from '../../components/common/BaseCard/BaseCard';
-import { appleColumn } from '../../data-providers/apple-column.data';
-import { appleDataSource } from '../../data-providers/apple.data';
+import { appleColumn } from '../../data-providers/apple/apple-column.data';
+import { appleDataSource } from '../../data-providers/apple/apple.data';
 import HistoryDataGrid from './HistoryData/HistoryDataGrid';
 
 const AppleDetailsPage: React.FC = () => {
 
   const { t } = useTranslation();
-  const columns: any = appleColumn as any;
-  const dataSource: any = appleDataSource
+  const columns: any = appleColumn;
+  const dataSource: any = appleDataSource;
 
   return (
     <>
