@@ -12,23 +12,27 @@ import LockPage from '../../pages/LockPage';
 
 import MainLayout from '../../components/layouts/main/MainLayout/MainLayout';
 import { withLoading } from '../../hocs/withLoading.hoc';
-import NftDashboardPage from '../../pages/DashboardPages/NftDashboardPage';
-import MedicalDashboardPage from '../../pages/DashboardPages/MedicalDashboardPage';
+import NftDashboardPage from '../../pages/DashboardPages/DashboardPage';
 import RequireAuth from './RequireAuth';
 
 const AuthLayout = React.lazy(() => import('../../components/layouts/AuthLayout/AuthLayout'));
 const ServerErrorPage = React.lazy(() => import('../../pages/ServerErrorPage'));
 const Error404Page = React.lazy(() => import('../../pages/Error404Page'));
 const Logout = React.lazy(() => import('./Logout'));
+const ApplePage = React.lazy(() => import('../../pages/Stock/Apple/ApplePage'));
+const TeslaPage = React.lazy(() => import('../../pages/Stock/Tesla/TeslaPage'));
+const NvidiaPage = React.lazy(() => import('../../pages/Stock/Nvidia/NvidiaPage'));
 
-export const NFT_DASHBOARD_PATH = '/';
-export const MEDICAL_DASHBOARD_PATH = '/medical-dashboard';
+export const DASHBOARD_PATH = '/';
 
-const MedicalDashboard = withLoading(MedicalDashboardPage);
 const NftDashboard = withLoading(NftDashboardPage);
 
 const ServerError = withLoading(ServerErrorPage);
 const Error404 = withLoading(Error404Page);
+
+const Apple = withLoading(ApplePage);
+const Tesla = withLoading(TeslaPage);
+const Nvidia = withLoading(NvidiaPage);
 
 const AuthLayoutFallback = withLoading(AuthLayout);
 const LogoutFallback = withLoading(Logout);
@@ -43,9 +47,13 @@ export const AppRouter: React.FC = () => {
   return(
     <BrowserRouter>
       <Routes>
-        <Route path={NFT_DASHBOARD_PATH} element={protectedLayout}>
+        <Route path={DASHBOARD_PATH} element={protectedLayout}>
           <Route index element={<NftDashboard />} />
-          <Route path={MEDICAL_DASHBOARD_PATH} element={<MedicalDashboard />} />
+          <Route path="stock" >
+            <Route path="apple" element={<Apple />} />
+            <Route path="tesla" element={<Tesla />} />
+            <Route path="nvidia" element={<Nvidia />} />
+          </Route>
           <Route path="server-error" element={<ServerError />} />
           <Route path="404" element={<Error404 />} />
         </Route>

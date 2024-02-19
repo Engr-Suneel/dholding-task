@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Outlet, useLocation } from 'react-router-dom';
 import { useResponsive } from '../../../../hooks';
 import { References } from '../../../common/References/References';
-import { MEDICAL_DASHBOARD_PATH, NFT_DASHBOARD_PATH } from '../../../routers/AppRouter';
+import { DASHBOARD_PATH } from '../../../routers/AppRouter';
 import { Header } from '../../../header/Header';
 import { MainHeader } from '../MainHeader/MainHeader';
 import MainSider from '../sider/MainSider/MainSider';
@@ -18,7 +18,7 @@ const MainLayout: React.FC = () => {
   const toggleSider = () => setSiderCollapsed(!siderCollapsed);
 
   useEffect(() => {
-    setIsTwoColumnsLayout([MEDICAL_DASHBOARD_PATH, NFT_DASHBOARD_PATH].includes(location.pathname) && isDesktop);
+    setIsTwoColumnsLayout([DASHBOARD_PATH].includes(location.pathname) && isDesktop);
   }, [location.pathname, isDesktop]);
 
   return (
