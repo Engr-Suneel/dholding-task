@@ -1,6 +1,8 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { INews, getAppleNews, getNvidiaNews, getTeslaNews } from '../../../api';
 import { NewsTypeEnum } from '../../../enums';
+import { BaseSpin } from '../../common/BaseSpin/BaseSpin';
+import { BaseSpace } from '../../common/BaseSpace/BaseSpace';
 import NewsItem from './NewsItem';
 import styled from 'styled-components';
 
@@ -16,9 +18,17 @@ export const NewsWrapper = styled.div`
   height: calc(100% - 30px);
 `;
 
+export const Space = styled(BaseSpace)`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: calc(100% - 30px);
+`;
+
 const NewsDetails: React.FC<any> = (props: any) => {
   const { newsType, title } = props;
   const [news, setNews] = useState<INews[]>([]);
+  const [isLoading, setLoading] = useState(false);
 
   const newsItems = useMemo(
     () => news.map((item, index) => <NewsItem key={index} {...item} />),
@@ -26,15 +36,25 @@ const NewsDetails: React.FC<any> = (props: any) => {
   );
 
   useEffect(() => {
+    setLoading(true);
     switch (newsType) {
       case NewsTypeEnum.APPLE:
-        getAppleNews().then((res) => setNews(res));
+        getAppleNews().then((res) => {
+          setNews(res);
+          setLoading(false);
+        });
         break;
       case NewsTypeEnum.TESLA:
-        getTeslaNews().then((res) => setNews(res));
+        getTeslaNews().then((res) => {
+          setNews(res);
+          setLoading(false);
+        });
         break;
       case NewsTypeEnum.NVIDIA:
-        getNvidiaNews().then((res) => setNews(res));
+        getNvidiaNews().then((res) => {
+          setNews(res);
+          setLoading(false);
+        });
         break;
       default:
         break;
@@ -44,7 +64,13 @@ const NewsDetails: React.FC<any> = (props: any) => {
   return (
     <>
       <Heading>{title}</Heading>
-      <NewsWrapper>{newsItems}</NewsWrapper>
+      {isLoading && (
+        <Space align="center">
+          {' '}
+          <BaseSpin size="large" />{' '}
+        </Space>
+      )}
+      {!isLoading && <NewsWrapper>{newsItems}</NewsWrapper>}
     </>
   );
 };
