@@ -8,7 +8,7 @@ const HistoryDataGrid: React.FC<any> = (props: any) => {
   return(
     <>
       <HistoryDataheader />
-      <Table columns={columns} dataSource={dataSource} />
+      <Table columns={columns} dataSource={dataSource} size='small' />
     </>
   )
 };
