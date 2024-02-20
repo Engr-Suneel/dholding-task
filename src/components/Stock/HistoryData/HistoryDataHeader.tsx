@@ -36,7 +36,7 @@ const HistoryDataheader: React.FC<any> = () => {
           <BaseCol span={16}>
             <SpaceWrapper>
               <Space direction='horizontal' align='end' size={12}>
-                <Button type="text" size='small' icon={<DownloadOutlined />}>
+                <Button type="dashed" size='small' icon={<DownloadOutlined />}>
                   Download
                 </Button>
                 <RangePicker size='small' />

@@ -14,4 +14,6 @@ export type TwoFactorAuthOption = 'email' | 'phone';
 
 export type ActivityStatusType = 'sold' | 'booked' | 'added';
 
+export type NewsStatusType = 'sold' | 'booked' | 'added';
+
 export type NotificationType = 'info' | 'mention' | 'success' | 'warning' | 'error';

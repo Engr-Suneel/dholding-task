@@ -876,13 +876,16 @@
   },
   "stock": {
     "apple": {
-      "title": "Apple Historical Data"
+      "title": "Apple Historical Data",
+      "newsTitle": "Apple News"
     },
     "tesla": {
-      "title": "Tesla Historical Data"
+      "title": "Tesla Historical Data",
+      "newsTitle": "Tesla News"
     },
     "nvidia": {
-      "title": "Nvidia Historical Data"
+      "title": "Nvidia Historical Data",
+      "newsTitle": "Nvidia News"
     }
   }
 }
