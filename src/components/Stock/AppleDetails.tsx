@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { BaseRow } from '../../components/common/BaseRow/BaseRow';
 import { BaseCol } from '../../components/common/BaseCol/BaseCol';
 import { BaseCard } from '../../components/common/BaseCard/BaseCard';
 import { appleColumn } from '../../data-providers/apple/apple-column.data';
-import { appleDataSource } from '../../data-providers/apple/apple.data';
 import BarChartDetails from '../../components/Charts/BarChartDetails';
+import { IApple, getAppleData } from '../../api/apple.api';
 import { barChartData } from './MarketData/BarChartData';
 import HistoryDataGrid from './HistoryData/HistoryDataGrid';
 import NewsDetails from './NewsData/NewsDetails';
@@ -31,7 +31,17 @@ const Heading = styled.span.attrs({ className: 'ant-card-head-title' })`
 const AppleDetailsPage: React.FC = () => {
   const { t } = useTranslation();
   const columns: any = appleColumn;
-  const dataSource: any = appleDataSource;
+
+  const [apples, setApples] = useState<IApple[]>([]);
+  const [isLoading, setLoading] = useState(false);
+
+  useEffect(() => {
+    setLoading(true);
+    getAppleData().then((response) => {
+      setApples(response);
+      setLoading(false);
+    });
+  }, []);
 
   return (
     <>
@@ -42,7 +52,11 @@ const AppleDetailsPage: React.FC = () => {
             title={t('stock.apple.title')}
             padding="1.25rem"
           >
-            <HistoryDataGrid columns={columns} dataSource={dataSource} />
+            <HistoryDataGrid
+              columns={columns}
+              dataSource={apples}
+              loading={isLoading}
+            />
           </BaseCard>
         </BaseCol>
         <BaseCol span={8}>

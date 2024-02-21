@@ -1,12 +1,12 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { BaseRow } from '../../components/common/BaseRow/BaseRow';
 import { BaseCol } from '../../components/common/BaseCol/BaseCol';
 import { BaseCard } from '../../components/common/BaseCard/BaseCard';
 import PieChartDetails from '../../components/Charts/PieChartDetails';
 import { teslaColumn } from '../../data-providers/tesla/tesla-column.data';
-import { teslaDataSource } from '../../data-providers/tesla/tesla.data';
 import { NewsTypeEnum } from '../../enums';
+import { ITesla, getTeslaData } from '../../api/tesla.api';
 import HistoryDataGrid from './HistoryData/HistoryDataGrid';
 import { pieChartData } from './MarketData/PieChartData';
 import NewsDetails from './NewsData/NewsDetails';
@@ -31,7 +31,17 @@ const Heading = styled.span.attrs({ className: 'ant-card-head-title' })`
 const TeslaDetailsPage: React.FC = () => {
   const { t } = useTranslation();
   const columns: any = teslaColumn;
-  const dataSource: any = teslaDataSource;
+
+  const [tesla, setTesla] = useState<ITesla[]>([]);
+  const [isLoading, setLoading] = useState(false);
+
+  useEffect(() => {
+    setLoading(true);
+    getTeslaData().then((response) => {
+      setTesla(response);
+      setLoading(false);
+    });
+  }, []);
 
   return (
     <>
@@ -42,7 +52,11 @@ const TeslaDetailsPage: React.FC = () => {
             title={t('stock.tesla.title')}
             padding="1.25rem"
           >
-            <HistoryDataGrid columns={columns} dataSource={dataSource} />
+            <HistoryDataGrid
+              columns={columns}
+              dataSource={tesla}
+              loading={isLoading}
+            />
           </BaseCard>
         </BaseCol>
         <BaseCol span={8}>
