@@ -1,70 +1,74 @@
 import { ColumnsType } from 'antd/lib/table';
-import { IInvidia } from './invidia.data';
+import { Dates } from '../../helpers';
+import { IInvidia } from '../../api/nvidia.api';
 import { Tag } from 'antd';
 
 export const invidiaColumn: ColumnsType<IInvidia> = [
   {
-    title: "Date",
-    dataIndex: "date",
+    title: 'Date',
+    dataIndex: 'date',
     defaultSortOrder: 'descend',
     sorter: (a: any, b: any) => a.date - b.date,
+    render: (_, item: IInvidia) => {
+      return <>{Dates.format(item.date, 'MM-DD-YYYY')}</>;
+    },
   },
   {
-    title: "Price",
-    dataIndex: "price",
+    title: 'Price',
+    dataIndex: 'price',
     defaultSortOrder: 'descend',
     sorter: (a, b) => a.price - b.price,
-    align: "right",
+    align: 'right',
     render: (_, item: IInvidia) => {
-      const color = item.isHigher ? "green" : "red";
+      const color = item.isHigher ? 'green' : 'red';
       return (
         <>
           <Tag color={color}>{item.price}</Tag>
         </>
-      )
-    }
+      );
+    },
   },
   {
-    title: "Open",
-    dataIndex: "open",
+    title: 'Open',
+    dataIndex: 'open',
     defaultSortOrder: 'descend',
     sorter: (a, b) => a.open - b.open,
-    align: "right"
+    align: 'right',
   },
   {
-    title: "High",
-    dataIndex: "high",
+    title: 'High',
+    dataIndex: 'high',
     defaultSortOrder: 'descend',
     sorter: (a, b) => a.high - b.high,
-    align: "right"
+    align: 'right',
   },
   {
-    title: "Low",
-    dataIndex: "low",
+    title: 'Low',
+    dataIndex: 'low',
     defaultSortOrder: 'descend',
     sorter: (a, b) => a.low - b.low,
-    align: "right"
+    align: 'right',
   },
   {
-    title: "Vol",
-    dataIndex: "volumne",
+    title: 'Vol',
+    dataIndex: 'volumne',
     defaultSortOrder: 'descend',
     sorter: (a: any, b: any) => a.volumne - b.volumne,
-    align: "right"
+    align: 'right',
   },
   {
-    title: "Changes",
-    dataIndex: "changes",
+    title: 'Changes',
+    dataIndex: 'changes',
     defaultSortOrder: 'descend',
     sorter: (a: any, b: any) => a.changes - b.changes,
-    align: "right",
+    align: 'right',
     render: (_, item: IInvidia) => {
-      const color = item.isHigher ? "green" : "red";
+      const color = item.isHigher ? 'green' : 'red';
       return (
         <>
           <Tag color={color}>{item.changes}</Tag>
         </>
-      )
-    }
+      );
+    },
   },
 ];

@@ -877,15 +877,18 @@
   "stock": {
     "apple": {
       "title": "Apple Historical Data",
-      "newsTitle": "Apple News"
+      "newsTitle": "Apple News",
+      "company": "Apple Inc (AAPL)"
     },
     "tesla": {
       "title": "Tesla Historical Data",
-      "newsTitle": "Tesla News"
+      "newsTitle": "Tesla News",
+      "company": "Tesla Inc (TSLA)"
     },
     "nvidia": {
       "title": "Nvidia Historical Data",
-      "newsTitle": "Nvidia News"
+      "newsTitle": "Nvidia News",
+      "company": "NVIDIA Corporation (NVDA)"
     }
   }
 }
