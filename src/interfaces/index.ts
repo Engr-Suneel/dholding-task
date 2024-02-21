@@ -3,4 +3,5 @@ export * from './api-error-data.interface';
 export * from './auth.interface';
 export * from './icon-wrapper.interface';
 export * from './settings.interface';
+export * from './time-frame.interface';
 export * from './user.interface';
